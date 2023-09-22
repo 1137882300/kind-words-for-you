@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="css/semantic.css" media="screen" title="no title" charset="utf-8">
     <title>按钮事件示例</title>
     <script>
-        var textPool = [
+        const textPool = [
             "你是哈批嘛",
             "我日你吗",
             "你个死不要脸的",
@@ -13,7 +13,7 @@
             "畜生"
         ];
 
-        var rightPool = [
+        const rightPool = [
             "你是笨蛋",
             "八嘎呀路",
             "你好坏哦",
@@ -36,6 +36,8 @@
         }
 
     </script>
+    <!--    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>-->
+    <script type="text/javascript" src="js/axios.js"></script>
 </head>
 <body>
 
@@ -61,4 +63,19 @@
 </div>
 
 </body>
+<script>
+    axios({
+        method: 'post',
+        headers: {'Access-Control-Allow-Origin': 'http://localhost:63342/'},
+        url: 'https://api.multiavatar.com/111.png',
+        data: {
+            firstName: 'Fred',
+            lastName: 'Flintstone'
+        }
+    }).then(res => {
+        console.log(res);
+    }).catch(err => {
+        console.log(err);
+    });
+</script>
 </html>
