@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <link rel="stylesheet" href="css/semantic.css" media="screen" title="no title" charset="utf-8">
+    <title>按钮事件示例</title>
+    <script>
+        var textPool = [
+            "你是哈批嘛",
+            "我日你吗",
+            "你个死不要脸的",
+            "狗杂种",
+            "畜生"
+        ];
+
+        var rightPool = [
+            "你是笨蛋",
+            "八嘎呀路",
+            "你好坏哦",
+            "不喜欢你",
+            "傻子"
+        ];
+
+        function changeTextLeft() {
+            let randomIndex = Math.floor(Math.random() * textPool.length);
+            document.getElementById("displayText").innerText = textPool[randomIndex];
+        }
+
+        function changeTextRight() {
+            let randomIndex = Math.floor(Math.random() * rightPool.length);
+            document.getElementById("displayText").innerText = rightPool[randomIndex];
+        }
+
+        function copy() {
+            utools.copyText(document.getElementById("displayText").innerText)
+        }
+
+    </script>
+</head>
+<body>
+
+<div class="ui four column centered grid">
+    <div class="row">
+        <div class="column" style="height: auto">
+        </div>
+    </div>
+    <div class="column aligned">
+        <div id="displayText"></div>
+    </div>
+    <div class="four column centered row">
+        <div class="column aligned">
+            <button class="ui primary button" onclick="changeTextLeft()">残暴模式</button>
+        </div>
+        <div class="column aligned">
+            <button class="ui olive button" onclick="changeTextRight()">温柔模式</button>
+        </div>
+    </div>
+    <div class="column aligned">
+        <button class="ui black button" onclick="copy()">复制</button>
+    </div>
+</div>
+
+</body>
+</html>
